@@ -181,6 +181,19 @@
       color: #9ca3af;
       padding: 1.5rem 1.5rem 1.8rem;
     }
+
+    .email-direct {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+    .email-direct a {
+      color: #b91c1c;
+      text-decoration: none;
+    }
+    .email-direct a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -190,7 +203,7 @@
         <div class="logo-mark"></div>
         <div class="brand-text">
           <h1>Skilled Trades Growth Capital</h1>
-          <span>Revenue-based financing for Maryland trade businesses</span>
+          <span>Revenue-based & local impact investing in Maryland trades</span>
         </div>
       </div>
       <nav class="nav-links">
@@ -214,15 +227,14 @@
 
     <section>
       <div class="form-card">
-        <!-- This form doesn't actually send anywhere yet; later we can wire it to Formspree or similar -->
-        <form>
+        <form id="contactForm">
           <div class="two-col">
             <div>
               <label for="name">Name</label>
               <input id="name" type="text" placeholder="Your name" />
             </div>
             <div>
-              <label for="email">Email</label>
+              <label for="email">Your email</label>
               <input id="email" type="email" placeholder="you@example.com" />
             </div>
           </div>
@@ -232,9 +244,9 @@
               <label for="role">I am a...</label>
               <select id="role">
                 <option value="">Select one</option>
-                <option value="owner">Maryland trade business owner</option>
-                <option value="investor">Prospective investor</option>
-                <option value="other">Other / just curious</option>
+                <option value="Maryland trade business owner">Maryland trade business owner</option>
+                <option value="prospective investor">Prospective investor</option>
+                <option value="other / just curious">Other / just curious</option>
               </select>
             </div>
             <div>
@@ -259,10 +271,15 @@
             <textarea id="message" placeholder="For example: growth capital for additional crews, interest in deal terms, etc."></textarea>
           </div>
 
-          <button type="button">Submit (placeholder)</button>
+          <button type="button" id="sendEmailButton">Send email</button>
           <div class="note">
-            This form is currently for demonstration and planning purposes only and does not collect or transmit data.
-            When you are ready, we can connect it to a real email or form service.
+            Clicking “Send email” will open your email program with the details pre-filled in a message to Skilled Trades Growth Capital.
+          </div>
+          <div class="email-direct">
+            Prefer to email directly? Write to
+            <a href="mailto:ivor.istuk@gmail.com?subject=Skilled%20Trades%20Growth%20Capital%20inquiry">
+              ivor.istuk@gmail.com
+            </a>.
           </div>
         </form>
       </div>
@@ -275,6 +292,40 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const DESTINATION_EMAIL = "ivor.istuk@gmail.com";
+
+    document.getElementById("sendEmailButton").addEventListener("click", function () {
+      const name = document.getElementById("name").value || "";
+      const email = document.getElementById("email").value || "";
+      const role = document.getElementById("role").value || "";
+      const business = document.getElementById("business").value || "";
+      const sector = document.getElementById("sector").value || "";
+      const revenue = document.getElementById("revenue").value || "";
+      const message = document.getElementById("message").value || "";
+
+      const subject = "Skilled Trades Growth Capital inquiry";
+
+      const bodyLines = [
+        "Name: " + name,
+        "Contact email: " + email,
+        "Role: " + role,
+        "Business: " + business,
+        "Sector: " + sector,
+        "Approx. annual revenue: " + revenue,
+        "",
+        "Message:",
+        message
+      ];
+
+      const body = encodeURIComponent(bodyLines.join("\n"));
+      const mailtoLink =
+        "mailto:" + encodeURIComponent(DESTINATION_EMAIL) +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + body;
+
+      window.location.href = mailtoLink;
+    });
   </script>
 </body>
 </html>
