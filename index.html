@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Skilled Trades Growth Capital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f5f5f7;
+      color: #111827;
+    }
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 1.25rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header .brand {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    header span.tagline {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+    .hero h2 {
+      font-size: 2.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero p.lead {
+      font-size: 1.05rem;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      background: #e5e7eb;
+      color: #111827;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn-primary,
+    .btn-secondary {
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: #f9fafb;
+    }
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: #111827;
+      border: 1px solid #d1d5db;
+    }
+    .btn-secondary:hover {
+      background: #e5e7eb;
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
+      border: 1px solid #e5e7eb;
+    }
+    .hero-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero-card ul {
+      list-style: none;
+      margin-left: 0;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+    .hero-card li {
+      margin-bottom: 0.4rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+    section h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+    section p {
+      color: #4b5563;
+      margin-bottom: 0.75rem;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      .grid-3 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #e5e7eb;
+    }
+    .card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .card p {
+      font-size: 0.93rem;
+      margin-bottom: 0;
+    }
+    ul.clean {
+      list-style: none;
+      padding-left: 0;
+      color: #4b5563;
+      font-size: 0.95rem;
+    }
+    ul.clean li {
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-box {
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 20px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+    }
+    .contact-box p {
+      margin-bottom: 0.35rem;
+      color: #e5e7eb;
+    }
+    .contact-box small {
+      color: #9ca3af;
+    }
+    .contact-input {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .contact-input input {
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      border: none;
+      min-width: 220px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      padding: 1.5rem 1.5rem 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>Skilled Trades Growth Capital</h1>
+      <span class="tagline">Flexible capital for HVAC, plumbing, electrical & home services</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="pill">For established skilled-trade owners</div>
+        <h2>Turn more booked work into real growth — without giving up ownership.</h2>
+        <p class="lead">
+          We provide flexible, revenue-based growth capital for profitable HVAC, plumbing,
+          electrical, roofing, and home-service companies that are ready to hire, add trucks,
+          and take on more jobs.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">Explore growth financing</a>
+          <a href="#how-it-works" class="btn-secondary">How it works</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>What could you do with an extra $50k–$200k?</h3>
+        <ul>
+          <li>• Hire and train 1–3 more technicians</li>
+          <li>• Add vans, tools, and equipment</li>
+          <li>• Expand into new neighborhoods</li>
+          <li>• Smooth cash flow through busy seasons</li>
+          <li>• Upgrade dispatch, software, and marketing</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <h3>How the financing works</h3>
+      <p>
+        Instead of a fixed bank loan, you repay a small percentage of your monthly revenue
+        (typically 5–8%) until a set total amount is reached. When revenue is high, you
+        repay faster. When revenue slows, your payment adjusts automatically.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4>1. Capital</h4>
+          <p>We invest $50,000–$200,000 into established, cash-flowing skilled-trade businesses.</p>
+        </div>
+        <div class="card">
+          <h4>2. Repayment</h4>
+          <p>You share a small percentage of monthly revenue until a pre-agreed cap (e.g. 1.3–1.6x) is repaid.</p>
+        </div>
+        <div class="card">
+          <h4>3. Flexibility</h4>
+          <p>No equity, no board, and payments that move with your revenue — protecting your cash flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Why skilled-trade businesses are a perfect fit</h3>
+      <ul class="clean">
+        <li>• Recurring revenue from maintenance and service plans</li>
+        <li>• Strong margins once crews and trucks are in place</li>
+        <li>• Consistent demand from housing stock, repairs, and upgrades</li>
+        <li>• Clear growth paths: more technicians, more trucks, more jobs</li>
+      </ul>
+      <p>
+        Traditional banks rarely match this reality. We focus specifically on businesses like yours,
+        where the main constraint is growth capital — not customer demand.
+      </p>
+    </section>
+
+    <section>
+      <h3>What makes this different from a bank loan?</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Keep full ownership</h4>
+          <p>No equity or control rights are taken. You stay 100% in charge of your company.</p>
+        </div>
+        <div class="card">
+          <h4>Cash-flow friendly</h4>
+          <p>No fixed monthly payment that can strain your business in slow months.</p>
+        </div>
+        <div class="card">
+          <h4>Skilled-trades focused</h4>
+          <p>We understand seasonality, crews, and job pipelines — not just spreadsheets.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-box">
+        <div>
+          <h3>Interested in growth capital for your trade business?</h3>
+          <p>Share your email and we’ll follow up with a short overview and a no-pressure call option.</p>
+          <small>No spam, no obligation.</small>
+        </div>
+        <div class="contact-input">
+          <input type="email" placeholder="you@example.com" />
+          <button class="btn-primary" type="button">I’m interested</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Skilled Trades Growth Capital · All rights reserved
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
