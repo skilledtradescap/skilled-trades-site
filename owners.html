@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For Trade Owners – Skilled Trades Growth Capital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Growth capital for Maryland HVAC, plumbing, electrical, roofing and home-service business owners." />
+  <style>
+    /* same CSS as index.html */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 0.7rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 3px solid #b91c1c;
+    }
+    header .brand {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #fbbf24;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.6);
+      flex-shrink: 0;
+    }
+    .logo-mark::before,
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+    .logo-mark::before {
+      background: linear-gradient(135deg, #111827 0 50%, #fbbf24 50% 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+    .logo-mark::after {
+      background: linear-gradient(315deg, #b91c1c 0 50%, #f9fafb 50% 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      opacity: 0.95;
+    }
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .brand-text span {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+    }
+    nav.nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: #e5e7eb;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-link:hover {
+      border-color: rgba(249, 250, 251, 0.35);
+      background: rgba(31,41,55,0.8);
+    }
+    .nav-link.active {
+      color: #fbbf24;
+      border-color: #fbbf24;
+      background: rgba(31,41,55,0.9);
+    }
+    .nav-link.nav-cta {
+      border-color: #b91c1c;
+      background: #b91c1c;
+      color: #f9fafb;
+    }
+    .nav-link.nav-cta:hover {
+      background: #991b1b;
+      border-color: #991b1b;
+    }
+    @media (max-width: 820px) {
+      header .brand { flex-direction: column; align-items: flex-start; }
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 3rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero p.lead {
+      font-size: 1.02rem;
+      color: #4b5563;
+      margin-bottom: 1.2rem;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(185, 28, 28, 0.08);
+      color: #b91c1c;
+      border-radius: 999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      margin-bottom: 0.75rem;
+      border: 1px solid rgba(185, 28, 28, 0.3);
+    }
+    .pill span.flag-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #111827 0 50%, #fbbf24 50% 100%);
+      margin-right: 0.45rem;
+    }
+    section { margin-bottom: 2.5rem; }
+    section h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+    section p { color: #4b5563; margin-bottom: 0.75rem; }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.1rem 1.2rem;
+      border: 1px solid #e5e7eb;
+    }
+    .card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+    .card p {
+      font-size: 0.93rem;
+      margin-bottom: 0;
+    }
+    .contact-box {
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 20px;
+      padding: 1.5rem 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      border: 1px solid #fbbf24;
+    }
+    .contact-box h3 { margin-bottom: 0.35rem; }
+    .contact-box p { margin-bottom: 0.35rem; color: #e5e7eb; }
+    .contact-box small { color: #9ca3af; }
+    .contact-input {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .contact-input a {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+      background: #b91c1c;
+      color: #f9fafb;
+    }
+    .contact-input a:hover { background: #991b1b; }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      padding: 1.5rem 1.5rem 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-left">
+        <div class="logo-mark"></div>
+        <div class="brand-text">
+          <h1>Skilled Trades Growth Capital</h1>
+          <span>Revenue-based financing for Maryland trade businesses</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="owners.html" class="nav-link active">Owners</a>
+        <a href="investors.html" class="nav-link">Investors</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="apply.html" class="nav-link nav-cta">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="pill"><span class="flag-dot"></span>For Maryland trade business owners</div>
+        <h2>Growth capital that moves with your revenue, not against it.</h2>
+        <p class="lead">
+          Most HVAC, plumbing, electrical and home-service companies have more demand than capacity.
+          We provide flexible capital so you can hire, add trucks, and upgrade tools—without selling equity
+          or taking on stressful fixed loan payments.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h3>What we provide</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Growth capital</h4>
+          <p>$50,000–$200,000 for established Maryland trade businesses to fund hiring, trucks, equipment, and expansion.</p>
+        </div>
+        <div class="card">
+          <h4>Revenue-based repayment</h4>
+          <p>You repay a small percentage of monthly revenue (typically 5–8%) until a pre-agreed cap is reached.</p>
+        </div>
+        <div class="card">
+          <h4>No equity or control</h4>
+          <p>You keep 100% ownership and full control of how you run and grow your company.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Why it fits skilled trades</h3>
+      <p>
+        Skilled-trade businesses are built around recurring work, reputation, and crews—not just hard collateral.
+        Traditional bank loans often don’t reflect this reality. Our model is designed for companies that:
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Have a track record</h4>
+          <p>2–3+ years in business, with consistent revenue and a base of repeat customers or maintenance plans.</p>
+        </div>
+        <div class="card">
+          <h4>Are profitable or close</h4>
+          <p>Positive or near-positive cash flow, where the main constraint is working capital and capacity, not demand.</p>
+        </div>
+        <div class="card">
+          <h4>Know how to grow</h4>
+          <p>You have a clear plan: more technicians, more trucks, new service areas, or equipment that unlocks bigger jobs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>How a typical structure might look</h3>
+      <p>
+        Exact terms depend on the specifics of your business, but a common pattern is:
+      </p>
+      <ul style="list-style:none; padding-left:0; color:#4b5563; font-size:0.95rem;">
+        <li>• Investment: $100,000</li>
+        <li>• Monthly repayment: 6% of revenue</li>
+        <li>• Repayment cap: 1.4x (total $140,000)</li>
+        <li>• Expected duration: 18–36 months, depending on revenue</li>
+      </ul>
+      <p style="margin-top:0.75rem;">
+        When your revenue is strong, you repay faster. When it’s slower, the payment adjusts down automatically. This helps
+        protect your cash flow while you grow.
+      </p>
+    </section>
+
+    <section>
+      <div class="contact-box">
+        <div>
+          <h3>Think this might be a fit for your business?</h3>
+          <p>We’re happy to start with a short conversation about your company, plans, and whether this structure makes sense.</p>
+          <small>You can share basic details now through the Apply page.</small>
+        </div>
+        <div class="contact-input">
+          <a href="apply.html">Go to Apply page</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Skilled Trades Growth Capital · Maryland
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
