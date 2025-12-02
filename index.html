@@ -18,11 +18,11 @@
     header {
       background: #111827;
       color: #f9fafb;
-      padding: 0.9rem 1.5rem 0.8rem;
+      padding: 0.7rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 10;
-      border-bottom: 3px solid #b91c1c; /* Maryland red accent */
+      border-bottom: 3px solid #b91c1c;
     }
     header .brand {
       max-width: 1100px;
@@ -30,7 +30,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
+      gap: 1.25rem;
     }
     .brand-left {
       display: flex;
@@ -45,8 +45,8 @@
       border: 1px solid #fbbf24;
       position: relative;
       box-shadow: 0 0 0 1px rgba(15,23,42,0.6);
+      flex-shrink: 0;
     }
-    /* Stylized Maryland-like block pattern */
     .logo-mark::before,
     .logo-mark::after {
       content: "";
@@ -60,7 +60,6 @@
     .logo-mark::after {
       background: linear-gradient(315deg, #b91c1c 0 50%, #f9fafb 50% 100%);
       clip-path: polygon(100% 0, 100% 100%, 0 100%);
-      mix-blend-mode: normal;
       opacity: 0.95;
     }
     .brand-text h1 {
@@ -73,14 +72,48 @@
       font-size: 0.82rem;
       color: #e5e7eb;
     }
-    header .tagline {
+
+    nav.nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
       font-size: 0.88rem;
-      text-align: right;
-      color: #e5e7eb;
     }
-    header .tagline strong {
+    .nav-link {
+      text-decoration: none;
+      color: #e5e7eb;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-link:hover {
+      border-color: rgba(249, 250, 251, 0.35);
+      background: rgba(31,41,55,0.8);
+    }
+    .nav-link.active {
       color: #fbbf24;
-      font-weight: 600;
+      border-color: #fbbf24;
+      background: rgba(31,41,55,0.9);
+    }
+    .nav-link.nav-cta {
+      border-color: #b91c1c;
+      background: #b91c1c;
+      color: #f9fafb;
+    }
+    .nav-link.nav-cta:hover {
+      background: #991b1b;
+      border-color: #991b1b;
+    }
+
+    @media (max-width: 820px) {
+      header .brand {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav.nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+      }
     }
 
     main {
@@ -100,9 +133,6 @@
     @media (max-width: 800px) {
       .hero {
         grid-template-columns: 1fr;
-      }
-      header .tagline {
-        display: none;
       }
     }
     .hero h2 {
@@ -155,7 +185,7 @@
       white-space: nowrap;
     }
     .btn-primary {
-      background: #b91c1c; /* Maryland red */
+      background: #b91c1c;
       color: #f9fafb;
     }
     .btn-primary:hover {
@@ -226,16 +256,6 @@
       margin-bottom: 0;
     }
 
-    ul.clean {
-      list-style: none;
-      padding-left: 0;
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
-    ul.clean li {
-      margin-bottom: 0.3rem;
-    }
-
     .contact-box {
       background: #111827;
       color: #f9fafb;
@@ -246,7 +266,7 @@
       justify-content: space-between;
       gap: 1rem;
       align-items: center;
-      border: 1px solid #fbbf24; /* gold outline */
+      border: 1px solid #fbbf24;
     }
     .contact-box h3 {
       margin-bottom: 0.35rem;
@@ -289,25 +309,28 @@
           <span>Revenue-based financing for Maryland trade businesses</span>
         </div>
       </div>
-      <div class="tagline">
-        Serving <strong>Maryland</strong> HVAC, plumbing, electrical & home-service companies
-      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="owners.html" class="nav-link">Owners</a>
+        <a href="investors.html" class="nav-link">Investors</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="apply.html" class="nav-link nav-cta">Apply</a>
+      </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div>
-        <div class="pill"><span class="flag-dot"></span>Focused on Maryland trade owners</div>
-        <h2>Turn more booked work into real growth — without giving up ownership or control.</h2>
+        <div class="pill"><span class="flag-dot"></span>Maryland-focused growth capital</div>
+        <h2>Flexible capital for Maryland’s HVAC, plumbing, electrical and home-service businesses.</h2>
         <p class="lead">
-          We provide flexible, revenue-based growth capital for profitable HVAC, plumbing,
-          electrical, roofing, and home-service companies across Maryland that are ready to hire,
-          add trucks, and take on more jobs.
+          We provide revenue-based growth financing so established skilled-trade companies can hire, add trucks,
+          and take on more jobs—without giving up ownership or taking on rigid bank debt.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Trade owners – get in touch</a>
-          <a href="#investors" class="btn-secondary">For investors</a>
+          <a href="owners.html" class="btn-primary">For trade owners</a>
+          <a href="investors.html" class="btn-secondary">For investors</a>
         </div>
       </div>
       <div class="hero-card">
@@ -322,36 +345,63 @@
       </div>
     </section>
 
-    <section id="how-it-works">
-      <h3>How the financing works</h3>
-      <p>
-        Instead of a fixed bank loan, you repay a small percentage of your monthly revenue
-        (typically 5–8%) until a set total amount is reached. When revenue is high, you
-        repay faster. When revenue slows, your payment adjusts automatically.
-      </p>
+    <section>
+      <h3>How our model works</h3>
       <div class="grid-3">
         <div class="card">
-          <h4>1. Capital</h4>
-          <p>We invest $50,000–$200,000 into established, cash-flowing Maryland skilled-trade businesses.</p>
+          <h4>Sector focus</h4>
+          <p>Maryland HVAC, plumbing, electrical, roofing, and home-service companies with steady revenue and clear growth opportunities.</p>
         </div>
         <div class="card">
-          <h4>2. Repayment</h4>
-          <p>You share a small percentage of monthly revenue until a pre-agreed cap (e.g. 1.3–1.6x) is repaid.</p>
+          <h4>Revenue-based financing</h4>
+          <p>Capital is repaid via a small share of monthly revenue until a pre-agreed cap is reached, aligning repayment with cash flow.</p>
         </div>
         <div class="card">
-          <h4>3. Flexibility</h4>
-          <p>No equity, no board, and payments that move with your revenue — protecting your cash flow.</p>
+          <h4>Deal-by-deal structure</h4>
+          <p>Investors participate through specific transactions, and owners retain full equity and operational control of their companies.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h3>Why skilled-trade businesses are a perfect fit</h3>
-      <ul class="clean">
-        <li>• Recurring revenue from maintenance and service plans</li>
-        <li>• Strong margins once crews and trucks are in place</li>
-        <li>• Consistent demand from repairs, upgrades, and code compliance</li>
-        <li>• Clear growth paths: more technicians, more trucks, more jobs</li>
-      </ul>
-      <p>
-        Traditiona
+      <h3>Who this is for</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h4>Trade owners</h4>
+          <p>Owners with 2–3+ years of operating history, reliable revenue, and a concrete plan for how additional capital would drive growth.</p>
+        </div>
+        <div class="card">
+          <h4>Investors</h4>
+          <p>Investors interested in a niche, illiquid, higher-risk private credit strategy tied to real, local businesses and tangible services.</p>
+        </div>
+        <div class="card">
+          <h4>Local ecosystem</h4>
+          <p>Maryland communities that benefit from better-financed trades: faster service, more jobs, and stronger local business networks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="contact-box">
+        <div>
+          <h3>Interested in learning more?</h3>
+          <p>Whether you are a Maryland trade owner or a potential investor, we’re happy to start with a short, no-pressure conversation.</p>
+          <small>You can also use the Apply page to share more details about your business or investment interest.</small>
+        </div>
+        <div class="contact-input">
+          <input type="email" placeholder="you@example.com" />
+          <a href="apply.html" class="btn-primary">Go to Apply page</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Skilled Trades Growth Capital · Maryland
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
