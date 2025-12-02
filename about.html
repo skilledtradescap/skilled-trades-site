@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About – Skilled Trades Growth Capital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Background and approach of Skilled Trades Growth Capital, focused on Maryland's skilled trades." />
+  <style>
+    /* same CSS shell */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    header {
+      background: #111827;
+      color: #f9fafb;
+      padding: 0.7rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 3px solid #b91c1c;
+    }
+    header .brand {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #fbbf24;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.6);
+      flex-shrink: 0;
+    }
+    .logo-mark::before,
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+    .logo-mark::before {
+      background: linear-gradient(135deg, #111827 0 50%, #fbbf24 50% 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+    .logo-mark::after {
+      background: linear-gradient(315deg, #b91c1c 0 50%, #f9fafb 50% 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      opacity: 0.95;
+    }
+    .brand-text h1 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .brand-text span {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+    }
+    nav.nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.88rem;
+    }
+    .nav-link {
+      text-decoration: none;
+      color: #e5e7eb;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .nav-link:hover {
+      border-color: rgba(249, 250, 251, 0.35);
+      background: rgba(31,41,55,0.8);
+    }
+    .nav-link.active {
+      color: #fbbf24;
+      border-color: #fbbf24;
+      background: rgba(31,41,55,0.9);
+    }
+    .nav-link.nav-cta {
+      border-color: #b91c1c;
+      background: #b91c1c;
+      color: #f9fafb;
+    }
+    .nav-link.nav-cta:hover {
+      background: #991b1b;
+      border-color: #991b1b;
+    }
+    @media (max-width: 820px) {
+      header .brand { flex-direction: column; align-items: flex-start; }
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.2rem 1.5rem 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    section { margin-bottom: 2.2rem; }
+    section h3 {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+    section p { color: #4b5563; margin-bottom: 0.75rem; }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #9ca3af;
+      padding: 1.5rem 1.5rem 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="brand-left">
+        <div class="logo-mark"></div>
+        <div class="brand-text">
+          <h1>Skilled Trades Growth Capital</h1>
+          <span>Revenue-based financing for Maryland trade businesses</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="owners.html" class="nav-link">Owners</a>
+        <a href="investors.html" class="nav-link">Investors</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="apply.html" class="nav-link nav-cta">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Skilled Trades Growth Capital</h2>
+      <p>
+        Skilled Trades Growth Capital is an emerging, Maryland-focused initiative exploring how to bring
+        flexible, revenue-based financing to established local trade businesses. The goal is simple:
+        help strong HVAC, plumbing, electrical, roofing, and home-service companies grow without forcing
+        owners to sell equity or rely solely on rigid bank debt.
+      </p>
+    </section>
+
+    <section>
+      <h3>Why skilled trades, and why Maryland?</h3>
+      <p>
+        Skilled-trade businesses are essential to the functioning of every community. They keep homes
+        heated and cooled, water running, electrical systems safe, and properties maintained. In Maryland,
+        demographic trends, electrification, and infrastructure needs are all contributing to strong,
+        sustained demand for these services.
+      </p>
+      <p>
+        At the same time, many trade businesses struggle to access growth capital that matches the way
+        their businesses actually work. Asset-light models, uneven paperwork, and seasonal revenue
+        patterns do not always fit neatly into conventional lending criteria—even when the underlying
+        business is healthy.
+      </p>
+    </section>
+
+    <section>
+      <h3>Our approach</h3>
+      <p>
+        Rather than starting with a large fund or complex structure, this initiative is being developed
+        gradually and carefully, focusing first on:
+      </p>
+      <ul style="list-style:none; padding-left:0; color:#4b5563; font-size:0.95rem;">
+        <li>• Understanding the needs and constraints of Maryland trade owners</li>
+        <li>• Testing simple, transparent revenue-based structures</li>
+        <li>• Maintaining clear alignment between owners and investors</li>
+        <li>• Keeping documentation and process as straightforward as possible</li>
+      </ul>
+      <p style="margin-top:0.75rem;">
+        Over time, the aim is to refine a model that works consistently for both sides and can potentially
+        be scaled or replicated.
+      </p>
+    </section>
+
+    <section>
+      <h3>Where things stand today</h3>
+      <p>
+        At this stage, Skilled Trades Growth Capital is an exploratory effort rather than a fully launched
+        fund. Any potential transaction would be evaluated individually, and any investment opportunities
+        would be offered only in compliance with applicable laws and to appropriately qualified investors.
+      </p>
+      <p style="color:#6b7280; font-size:0.9rem;">
+        Nothing on this site should be understood as a commitment to provide financing or as an offer or
+        solicitation to buy or sell any security.
+      </p>
+    </section>
+
+    <section>
+      <h3>Get in touch</h3>
+      <p>
+        If you are a Maryland trade owner who is exploring growth options—or an investor interested in
+        this space—you are welcome to reach out through the Apply page to start a conversation.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Skilled Trades Growth Capital · Maryland
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
