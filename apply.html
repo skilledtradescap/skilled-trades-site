@@ -271,14 +271,16 @@
             <textarea id="message" placeholder="For example: growth capital for additional crews, interest in deal terms, etc."></textarea>
           </div>
 
-          <button type="button" id="sendEmailButton">Send email</button>
+          <!-- Button uses global sendEmail() defined in the script -->
+          <button type="button" onclick="sendEmail()">Send email</button>
+
           <div class="note">
             Clicking “Send email” will open your email program with the details pre-filled in a message to Skilled Trades Growth Capital.
           </div>
           <div class="email-direct">
             Prefer to email directly? Write to
-            <a href="mailto:ivor.istuk@gmail.com?subject=Skilled%20Trades%20Growth%20Capital%20inquiry">
-              ivor.istuk@gmail.com
+            <a href="mailto:skilledtradesgrowthcapital@yahoo.com?subject=Skilled%20Trades%20Growth%20Capital%20inquiry">
+              skilledtradesgrowthcapital@yahoo.com
             </a>.
           </div>
         </form>
@@ -293,9 +295,10 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const DESTINATION_EMAIL = "ivor.istuk@gmail.com";
+    const DESTINATION_EMAIL = "skilledtradesgrowthcapital@yahoo.com";
 
-    document.getElementById("sendEmailButton").addEventListener("click", function () {
+    // Global function used by the button's onclick attribute
+    function sendEmail() {
       const name = document.getElementById("name").value || "";
       const email = document.getElementById("email").value || "";
       const role = document.getElementById("role").value || "";
@@ -324,8 +327,9 @@
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + body;
 
+      // Trigger user's default mail client / handler
       window.location.href = mailtoLink;
-    });
+    }
   </script>
 </body>
 </html>
