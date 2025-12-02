@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Skilled Trades Growth Capital</title>
+  <title>Skilled Trades Growth Capital – Maryland</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Revenue-based growth capital for Maryland HVAC, plumbing, electrical, roofing and home-service businesses." />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.6;
-      background: #f5f5f7;
+      background: #f3f4f6;
       color: #111827;
     }
+
+    /* HEADER + BRANDING */
     header {
       background: #111827;
       color: #f9fafb;
-      padding: 1.25rem 1.5rem;
+      padding: 0.9rem 1.5rem 0.8rem;
       position: sticky;
       top: 0;
       z-index: 10;
+      border-bottom: 3px solid #b91c1c; /* Maryland red accent */
     }
     header .brand {
       max-width: 1100px;
@@ -26,23 +30,66 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1rem;
     }
-    header h1 {
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #fbbf24;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(15,23,42,0.6);
+    }
+    /* Stylized Maryland-like block pattern */
+    .logo-mark::before,
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+    .logo-mark::before {
+      background: linear-gradient(135deg, #111827 0 50%, #fbbf24 50% 100%);
+      clip-path: polygon(0 0, 100% 0, 0 100%);
+    }
+    .logo-mark::after {
+      background: linear-gradient(315deg, #b91c1c 0 50%, #f9fafb 50% 100%);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      mix-blend-mode: normal;
+      opacity: 0.95;
+    }
+    .brand-text h1 {
       font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
-    header span.tagline {
-      font-size: 0.9rem;
-      opacity: 0.85;
+    .brand-text span {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+    }
+    header .tagline {
+      font-size: 0.88rem;
+      text-align: right;
+      color: #e5e7eb;
+    }
+    header .tagline strong {
+      color: #fbbf24;
+      font-weight: 600;
     }
 
     main {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 3rem;
+      padding: 2.2rem 1.5rem 3rem;
     }
 
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -54,33 +101,46 @@
       .hero {
         grid-template-columns: 1fr;
       }
+      header .tagline {
+        display: none;
+      }
     }
     .hero h2 {
-      font-size: 2.1rem;
+      font-size: 2.05rem;
       margin-bottom: 0.75rem;
     }
     .hero p.lead {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       color: #4b5563;
       margin-bottom: 1.5rem;
     }
     .pill {
       display: inline-flex;
       align-items: center;
-      background: #e5e7eb;
-      color: #111827;
+      background: rgba(185, 28, 28, 0.08);
+      color: #b91c1c;
       border-radius: 999px;
       padding: 0.25rem 0.75rem;
       font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       margin-bottom: 0.75rem;
+      border: 1px solid rgba(185, 28, 28, 0.3);
+    }
+    .pill span.flag-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #111827 0 50%, #fbbf24 50% 100%);
+      margin-right: 0.45rem;
     }
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
     }
+
     .btn-primary,
     .btn-secondary {
       border-radius: 999px;
@@ -95,11 +155,11 @@
       white-space: nowrap;
     }
     .btn-primary {
-      background: #2563eb;
+      background: #b91c1c; /* Maryland red */
       color: #f9fafb;
     }
     .btn-primary:hover {
-      background: #1d4ed8;
+      background: #991b1b;
     }
     .btn-secondary {
       background: transparent;
@@ -142,6 +202,7 @@
       color: #4b5563;
       margin-bottom: 0.75rem;
     }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -164,6 +225,7 @@
       font-size: 0.93rem;
       margin-bottom: 0;
     }
+
     ul.clean {
       list-style: none;
       padding-left: 0;
@@ -184,6 +246,10 @@
       justify-content: space-between;
       gap: 1rem;
       align-items: center;
+      border: 1px solid #fbbf24; /* gold outline */
+    }
+    .contact-box h3 {
+      margin-bottom: 0.35rem;
     }
     .contact-box p {
       margin-bottom: 0.35rem;
@@ -216,20 +282,28 @@
 <body>
   <header>
     <div class="brand">
-      <h1>Skilled Trades Growth Capital</h1>
-      <span class="tagline">Flexible capital for HVAC, plumbing, electrical & home services</span>
+      <div class="brand-left">
+        <div class="logo-mark"></div>
+        <div class="brand-text">
+          <h1>Skilled Trades Growth Capital</h1>
+          <span>Revenue-based financing for Maryland trade businesses</span>
+        </div>
+      </div>
+      <div class="tagline">
+        Serving <strong>Maryland</strong> HVAC, plumbing, electrical & home-service companies
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
       <div>
-        <div class="pill">For established skilled-trade owners</div>
-        <h2>Turn more booked work into real growth — without giving up ownership.</h2>
+        <div class="pill"><span class="flag-dot"></span>Focused on Maryland trade owners</div>
+        <h2>Turn more booked work into real growth — without giving up ownership or control.</h2>
         <p class="lead">
           We provide flexible, revenue-based growth capital for profitable HVAC, plumbing,
-          electrical, roofing, and home-service companies that are ready to hire, add trucks,
-          and take on more jobs.
+          electrical, roofing, and home-service companies across Maryland that are ready to hire,
+          add trucks, and take on more jobs.
         </p>
         <div class="hero-actions">
           <a href="#contact" class="btn-primary">Explore growth financing</a>
@@ -241,7 +315,7 @@
         <ul>
           <li>• Hire and train 1–3 more technicians</li>
           <li>• Add vans, tools, and equipment</li>
-          <li>• Expand into new neighborhoods</li>
+          <li>• Expand into new Maryland counties</li>
           <li>• Smooth cash flow through busy seasons</li>
           <li>• Upgrade dispatch, software, and marketing</li>
         </ul>
@@ -258,7 +332,7 @@
       <div class="grid-3">
         <div class="card">
           <h4>1. Capital</h4>
-          <p>We invest $50,000–$200,000 into established, cash-flowing skilled-trade businesses.</p>
+          <p>We invest $50,000–$200,000 into established, cash-flowing Maryland skilled-trade businesses.</p>
         </div>
         <div class="card">
           <h4>2. Repayment</h4>
@@ -276,11 +350,11 @@
       <ul class="clean">
         <li>• Recurring revenue from maintenance and service plans</li>
         <li>• Strong margins once crews and trucks are in place</li>
-        <li>• Consistent demand from housing stock, repairs, and upgrades</li>
+        <li>• Consistent demand from repairs, upgrades, and code compliance</li>
         <li>• Clear growth paths: more technicians, more trucks, more jobs</li>
       </ul>
       <p>
-        Traditional banks rarely match this reality. We focus specifically on businesses like yours,
+        Traditional banks rarely match this reality. We focus specifically on Maryland businesses like yours,
         where the main constraint is growth capital — not customer demand.
       </p>
     </section>
@@ -294,11 +368,11 @@
         </div>
         <div class="card">
           <h4>Cash-flow friendly</h4>
-          <p>No fixed monthly payment that can strain your business in slow months.</p>
+          <p>No fixed monthly payment that can strain your business in slower months.</p>
         </div>
         <div class="card">
-          <h4>Skilled-trades focused</h4>
-          <p>We understand seasonality, crews, and job pipelines — not just spreadsheets.</p>
+          <h4>Built for trades</h4>
+          <p>We understand crews, vans, seasonality, and job pipelines — not just spreadsheets.</p>
         </div>
       </div>
     </section>
@@ -306,7 +380,7 @@
     <section id="contact">
       <div class="contact-box">
         <div>
-          <h3>Interested in growth capital for your trade business?</h3>
+          <h3>Interested in growth capital for your Maryland trade business?</h3>
           <p>Share your email and we’ll follow up with a short overview and a no-pressure call option.</p>
           <small>No spam, no obligation.</small>
         </div>
@@ -319,7 +393,7 @@
   </main>
 
   <footer>
-    © <span id="year"></span> Skilled Trades Growth Capital · All rights reserved
+    © <span id="year"></span> Skilled Trades Growth Capital · Maryland
   </footer>
 
   <script>
